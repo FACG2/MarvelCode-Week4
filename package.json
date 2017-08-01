@@ -1,0 +1,25 @@
+{
+  "name": "marvelcode-week4",
+  "version": "1.0.0",
+  "description": "Autocomplete app for all distinct marvel characters",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG2/MarvelCode-Week4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG2/MarvelCode-Week4/issues"
+  },
+  "homepage": "https://github.com/FACG2/MarvelCode-Week4#readme",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
