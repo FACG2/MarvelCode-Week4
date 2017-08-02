@@ -54,18 +54,24 @@ body {
 }
 
 #autocomplete-results {
-    display: none;
-    width: 100%;
-    margin-top: -2px;
-    color: color;
+  width: 320px;
+  text-align: center;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid grey;
 }
 
-li {
-    width: 100%;
-    padding: 20px 15px;
-    border-right: border-color;
-    border-bottom: border-color;
-    border-left: border-color;
+.option-a{
+  text-decoration: none;
+  padding: 1em;
+  margin: 0 auto;
+  font-size: 1.2em;
+  color: #623B5A;
+}
+
+.option-li{
+  width: 320px;
+  list-style-type: none;
 }
 
 #autocomplete-results:hover {

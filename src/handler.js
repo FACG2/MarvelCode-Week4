@@ -1,5 +1,9 @@
 var fs = require('fs');
 var path = require ('path');
+var functions = require('./functions.js');
+var qs = require('querystring');
+
+
 var extensionType = {
   "html": "text/html",
   "css": "text/css",
@@ -36,6 +40,22 @@ function handlePublic(req, res) {
   })
 }
 
+function handleSearch(req,res){
+  var endpoint = req.url;
+  var string = endpoint.split('?')[1];
+  var query = qs.parse(string);
+  console.log(query);
+    res.writeHead(200, { "Content-Type": "application/javascript"});
+    var suggestions = "";
+    if(query.gender==='both' && query.align==='both'){
+      suggestions = functions.getTenNames(query.text);
+    }
+    else suggestions = functions.filterBySexAndAlign(query.text,query.align,query.gender);
+
+    res.end(suggestions.toString());
+    }
+
+
 
  function notFound(req, res){
   res.writeHead(404,{'Content-Type': 'text/html'});
@@ -46,5 +66,6 @@ function handlePublic(req, res) {
 module.exports = {
 handleHome : handleHome,
 handlePublic : handlePublic,
+handleSearch: handleSearch,
 notFound : notFound,
 };
