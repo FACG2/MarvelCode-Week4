@@ -8,7 +8,7 @@ const port = process.env.PORT || 4000;
 
 
 var app = function(req, res){
-  router(req,res);
+  router.router(req,res);
 };
 var server = http.createServer(app).listen(port);
 
