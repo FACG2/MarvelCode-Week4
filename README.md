@@ -43,18 +43,17 @@ Make sure that `port` is declared in `server.js` as below, in order for successf
 ## How to use ?
  * User Side :
 
-  * Open url for the website .
-  * Write the `Marvel's Characters` name in the  input box bellow.
+    * Open url for the website .
+    * Write the `Marvel's Characters` name in the  input box bellow.
+    * click on any itemList to search about it in Google .
 
 
   * Developer Side:
 
       ` git clone https://github.com/FACG2/MarvelCode-Week4`
 
-      `npm init to start creating the package.json`
+      Run `npm install` to install all dependencies`
 
-      `  Run npm install to install all dependencies`
-
-      ` Run src/server.js `
+      Run  `node src/server.js `
 
 Navigate to http://localhost:4000/ in your browser
