@@ -12,6 +12,8 @@
   <header id="header_container">
     <h1>Marvel</h1>
   </header>
+
+  <div id = "formContainer1">
   <form  id="gender">
     <input type="radio" name="gender" value="Male Characters"> Male
     <input type="radio" name="gender" value="Female Characters"> Female
@@ -22,13 +24,14 @@
     <input type="radio" name="align" value="Bad Characters"> Bad
     <input type="radio" name="align" value="both" checked> Both
   </form>
+</div>
   <form id="form" method="GET" action="search/">
     <div id="autocomplete_container">
       <input id="autocomplete" placeholder="Ex : Iron man" type="text" list="autocomplete-results" autofocus="true">
       <ul id="autocomplete-results"></ul>
     </div>
-
   </form>
+
 
   <script src="./js/request.js"></script>
   <script src="./js/index.js"></script>
