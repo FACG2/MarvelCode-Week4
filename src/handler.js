@@ -16,10 +16,6 @@ function readFile(res, endpoint) {
         "html": "text/html",
         "css": "text/css",
         "js": "application/javascript",
-        "ico": "image/x-icon",
-        "woff": "application/x-font-woff",
-        "svg": "image/svg+xml",
-        "woff2": "application/x-font-woff2"
       }
       res.writeHead(200, { "Content-Type": extensionType[extension]});
       res.end(file);
