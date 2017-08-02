@@ -3,10 +3,11 @@ var functions = require('./functions.js');
 
   function router (req, res) {
   var endpoint = req.url;
-  console.log(endpoint);
   if (endpoint === '/') {
     handler.handleHome(req, res);
-  } else {
+  } else if (endpoint.startsWith('/search')){
+    handler.handleSearch(req,res)
+} else {
     handler.handlePublic(req,res);
   }
 }

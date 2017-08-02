@@ -2,22 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Marvel App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./css/stylesheet.css" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>Marvel App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./css/stylesheet.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
   <header id="header_container">
     <h1>Marvel</h1>
   </header>
-  <div id="autocomplete_container">
-        <input id="autocomplete" placeholder="Ex : Iron man" />
-        <ul id="autocomplete-results"></ul>
+  <form  id="gender">
+    <input type="radio" name="gender" value="Male Characters"> Male
+    <input type="radio" name="gender" value="Female Characters"> Female
+    <input type="radio" name="gender" value="both" checked> Both
+  </form>
+  <form id="align">
+    <input type="radio" name="align" value="Good Characters"> Good
+    <input type="radio" name="align" value="Bad Characters"> Bad
+    <input type="radio" name="align" value="both" checked> Both
+  </form>
+  <form id="form" method="GET" action="search/">
+    <div id="autocomplete_container">
+      <input id="autocomplete" placeholder="Ex : Iron man" type="text" list="autocomplete-results" autofocus="true">
+      <ul id="autocomplete-results"></ul>
     </div>
-  
-    <script src="./js/index.js"></script>
+
+  </form>
+
+  <script src="./js/request.js"></script>
+  <script src="./js/index.js"></script>
+
 </body>
 
 
