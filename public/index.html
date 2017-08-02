@@ -15,14 +15,20 @@
 
   <div id = "formContainer1">
   <form  id="gender">
-    <input type="radio" name="gender" value="Male Characters"> Male
-    <input type="radio" name="gender" value="Female Characters"> Female
-    <input type="radio" name="gender" value="both" checked> Both
+    <input id="male" type="radio" name="gender" value="Male Characters">
+    <label for="male"><span><span></span></span> Male </label>
+    <input id="female" type="radio" name="gender" value="Female Characters">
+    <label for="female"><span><span></span></span> Female </label>
+    <input id="both" type="radio" name="gender" value="both" checked>
+    <label for="both"><span><span></span></span> Both </label>
   </form>
   <form id="align">
-    <input type="radio" name="align" value="Good Characters"> Good
-    <input type="radio" name="align" value="Bad Characters"> Bad
-    <input type="radio" name="align" value="both" checked> Both
+    <input id="good" type="radio" name="align" value="Good Characters">
+    <label for="good"><span><span></span></span> Good </label>
+    <input id="bad"type="radio" name="align" value="Bad Characters">
+    <label for="bad"><span><span></span></span> Bad </label>
+    <input id="both2" type="radio" name="align" value="both" checked>
+    <label for="both2"><span><span></span></span> Both </label>
   </form>
 </div>
   <form id="form" method="GET" action="search/">
