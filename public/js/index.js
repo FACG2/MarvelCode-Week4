@@ -23,15 +23,19 @@
 
     var url = endpoint + '?text=' + input + "&gender=" + gender + "&align=" + align;
     console.log(url);
+  var form = document.getElementById('autocomplete-results');
+    if (input.length===0){
+      while (form.firstChild) {
+        form.removeChild(form.firstChild);
+      }
+    }
 
     if (input.length > 0) {
       get(url, function(response) {
-        var form = document.getElementById('autocomplete-results');
+
         var ar = response.split(',');
         console.log(response);
-        while (form.firstChild) {
-          form.removeChild(form.firstChild);
-        }
+
 
         ar.forEach(function(val) {
           var option = document.createElement('li');

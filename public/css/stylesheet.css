@@ -13,7 +13,7 @@ body {
     height: 94px;
     margin: auto;
     background-color: transparent;
-    margin-top: 100px;
+    /*margin-top: 50px;*/
 }
 #header_container{
   width: 100%;
@@ -85,4 +85,24 @@ body {
     #autocomplete {
         width: 300px;
     }
+    #autocomplete-results{
+      width: 260px;
+
+    }
+    .option-li{
+      margin: 0 -47px;
+      text-align: center;
+    }
+}
+
+#formContainer1{
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#gender,#align{
+  display: flex;
+  justify-content: center;
+
 }
