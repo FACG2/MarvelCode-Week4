@@ -44,7 +44,6 @@ function handleSearch(req,res){
   var endpoint = req.url;
   var string = endpoint.split('?')[1];
   var query = qs.parse(string);
-  console.log(query);
     res.writeHead(200, { "Content-Type": "application/javascript"});
     var suggestions = "";
     if(query.gender==='both' && query.align==='both'){
