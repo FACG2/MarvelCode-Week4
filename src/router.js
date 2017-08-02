@@ -1,15 +1,16 @@
 var handler = require('./handler.js');
-var algorithm = require('./functions.js');
+var functions = require('./functions.js');
 
-module.exports = function(req, res) {
+  function router (req, res) {
   var endpoint = req.url;
+  console.log(endpoint);
   if (endpoint === '/') {
-    handler.serveHome(req, res);
+    handler.handleHome(req, res);
+  } else {
+    handler.handlePublic(req,res);
   }
-  else if (endpoint.indexOf('search') !== -1) {
-    algorithm.serveHints(req, res);
-  }
-  else {
-    handler.servePublic(req,res);
-  }
+}
+
+module.exports = {
+  router:router
 }

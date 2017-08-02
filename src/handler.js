@@ -1,36 +1,41 @@
 var fs = require('fs');
 var path = require ('path');
+var extensionType = {
+  "html": "text/html",
+  "css": "text/css",
+  "js": "application/javascript",
+  "ico": "image/x-icon",
+  "woff": "application/x-font-woff",
+  "svg": "image/svg+xml",
+  "woff2": "application/x-font-woff2"
+}
 
- function serveHome(req, res){
-  readFile(res, '/index.html');
+ function handleHome(req, res){
+   fs.readFile(__dirname + '/../public/index.html', function(err, data) {
+     if (err) {
+       res.writeHead(500, {'Content-Type': 'text/html'});
+       res.end('<h1> Internal server error</h1>');
+     } else {
+       res.writeHead(200, {'Content-Type': 'text/html'});
+       res.end(data);
+     }
+ });
 };
 
-function readFile(res, endpoint) {
+function handlePublic(req, res) {
+  var endpoint = req.url;
   fs.readFile(path.join(__dirname, '..', 'public', endpoint), function(err, file) {
     if (err) {
       console.log(err);
-      notFound(null, res);
+      notFound(req,res);
     } else {
       var extension = endpoint.split('.')[1];
-      var extensionType = {
-        "html": "text/html",
-        "css": "text/css",
-        "js": "application/javascript",
-        "ico": "image/x-icon",
-        "woff": "application/x-font-woff",
-        "svg": "image/svg+xml",
-        "woff2": "application/x-font-woff2"
-      }
       res.writeHead(200, { "Content-Type": extensionType[extension]});
       res.end(file);
     }
   })
 }
 
- function servePublic(req, res) {
-  var endpoint = req.url;
-  readFile(res, endpoint)
-};
 
  function notFound(req, res){
   res.writeHead(404,{'Content-Type': 'text/html'});
@@ -39,8 +44,7 @@ function readFile(res, endpoint) {
 };
 
 module.exports = {
-serveHome : serveHome,
-readFile : readFile,
-servePublic : servePublic,
+handleHome : handleHome,
+handlePublic : handlePublic,
 notFound : notFound,
 };
