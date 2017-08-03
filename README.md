@@ -57,3 +57,5 @@ Make sure that `port` is declared in `server.js` as below, in order for successf
       Run  `node src/server.js `
 
 Navigate to http://localhost:4000/ in your browser
+
+[check the site:](https://marvel-week4.herokuapp.com/)
