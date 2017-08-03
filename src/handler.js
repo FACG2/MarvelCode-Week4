@@ -14,18 +14,6 @@ var extensionType = {
   "woff2": "application/x-font-woff2"
 }
 
- function handleHome(req, res){
-   fs.readFile(__dirname + '/../public/index.html', function(err, data) {
-     if (err) {
-       res.writeHead(500, {'Content-Type': 'text/html'});
-       res.end('<h1> Internal server error</h1>');
-     } else {
-       res.writeHead(200, {'Content-Type': 'text/html'});
-       res.end(data);
-     }
- });
-};
-
 function handlePublic(req, res) {
   var endpoint = req.url;
   fs.readFile(path.join(__dirname, '..', 'public', endpoint), function(err, file) {
@@ -44,7 +32,7 @@ function handleSearch(req,res){
   var endpoint = req.url;
   var string = endpoint.split('?')[1];
   var query = qs.parse(string);
-    res.writeHead(200, { "Content-Type": "application/javascript"});
+  res.writeHead(200, { "Content-Type": "application/javascript"});
     var suggestions = "";
     if(query.gender==='both' && query.align==='both'){
       suggestions = functions.getTenNames(query.text);
@@ -63,7 +51,6 @@ function handleSearch(req,res){
 };
 
 module.exports = {
-handleHome : handleHome,
 handlePublic : handlePublic,
 handleSearch: handleSearch,
 notFound : notFound,
