@@ -3,7 +3,7 @@ Autocomplete app for all distinct marvel characters
 
 ## Introduction Idea
 
-Our website that give you ability to input text into input field which will give you back sensible suggestion related to Marvel's Characters .
+Our website that give you ability to input text into input field which will give you back sensible suggestion related to Marvel's  Characters .
 
 
 ##  User Stories
