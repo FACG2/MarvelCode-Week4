@@ -4,7 +4,8 @@ var functions = require('./functions.js');
   function router (req, res) {
   var endpoint = req.url;
   if (endpoint === '/') {
-    handler.handleHome(req, res);
+    req.url = 'index.html';
+    handler.handlePublic(req, res);
   } else if (endpoint.startsWith('/search')){
     handler.handleSearch(req,res)
 } else {
