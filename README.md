@@ -3,7 +3,7 @@ Autocomplete app for all distinct marvel characters
 
 ## Introduction Idea
 
-Our website that give you ability to input text into input field which will give you back sensible suggestion related to Marvel's Characters .
+Our website that give you ability to input text into input field which will give you back sensible suggestion related to Marvel's  Characters .
 
 
 ##  User Stories
@@ -57,3 +57,7 @@ Make sure that `port` is declared in `server.js` as below, in order for successf
       Run  `node src/server.js `
 
 Navigate to http://localhost:4000/ in your browser
+
+[check the site](https://marvel-week4.herokuapp.com/)
+
+>Done By : Abdallah,Mahmoud,Aia,Salwa

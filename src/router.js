@@ -13,6 +13,4 @@ var functions = require('./functions.js');
   }
 }
 
-module.exports = {
-  router:router
-}
+module.exports = router;
