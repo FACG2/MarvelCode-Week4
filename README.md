@@ -36,7 +36,6 @@ Make sure that `port` is declared in `server.js` as below, in order for successf
   * Creating a router for your server.
   * Learning how to use the fs core module to read and write from the file system.
   * Learning how to communicate with your http server from the front-end.
-  * Setting up nodemon for your development environment.
   * Learning about how to modularise your server code.
 
 
