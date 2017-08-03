@@ -2,7 +2,7 @@
   "name": "marvelcode-week4",
   "version": "1.0.0",
   "description": "Autocomplete app for all distinct marvel characters",
-  "main": "index.js",
+  "main": "src/server.js",
   "directories": {
     "test": "test"
   },
