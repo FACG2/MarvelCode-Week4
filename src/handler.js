@@ -14,15 +14,9 @@ var extensionType = {
 
 function handlePublic(req, res) {
   var endpoint = req.url;
-  if (endpoint === '/') {
-    endpoint = 'index.html';
-  }
   fs.readFile(path.join(__dirname, '..', 'public', endpoint), function(err, file) {
     if (err) {
-      res.writeHead(500, {
-        'Content-Type': 'text/html'
-      });
-      res.end('<h1> Internal server error</h1>');
+      notFound(req, res);
     } else {
       var extension = endpoint.split('.')[1];
       res.writeHead(200, {
@@ -37,12 +31,14 @@ function handleSearch(req, res) {
   var endpoint = req.url;
   var string = endpoint.split('?')[1];
   var query = qs.parse(string);
-  console.log(query);
   res.writeHead(200, {
     "Content-Type": "application/javascript"
   });
   var suggestions = "";
-  if (query.gender === 'both' && query.align === 'both') {
+  if (typeof query.gender === 'undefined' || typeof query.align === 'undefined' ||
+    typeof query.text === 'undefined') {
+    notFound(req, res);
+  } else if (query.gender === 'both' && query.align === 'both') {
     suggestions = functions.getTenNames(query.text);
   } else suggestions = functions.filterBySexAndAlign(query.text, query.align, query.gender);
   res.end(suggestions.toString());

@@ -2,9 +2,29 @@
   var textField = document.getElementById('autocomplete');
   var genders = document.getElementsByName('gender');
   var aligns = document.getElementsByName('align');
+  var genderForm = document.getElementById('gender');
+  var alignForm = document.getElementById('align');
 
 
   textField.onkeyup = function(event) {
+    getList();
+  };
+
+  genders.forEach(function(gender) {
+    gender.onchange = function(event) {
+      getList();
+    }
+  });
+
+  aligns.forEach(function(align) {
+    return align.onchange = function(event) {
+      getList();
+    }
+  });
+
+
+
+  function getList() {
     var input = textField.value;
     var endpoint = '/search';
     var gender = '';
@@ -21,8 +41,8 @@
 
 
     var url = endpoint + '?text=' + input + "&gender=" + gender + "&align=" + align;
-  var form = document.getElementById('autocomplete-results');
-    if (input.length===0){
+    var form = document.getElementById('autocomplete-results');
+    if (input.length === 0) {
       while (form.firstChild) {
         form.removeChild(form.firstChild);
       }
@@ -30,6 +50,7 @@
 
     if (input.length > 0) {
       get(url, function(response) {
+        console.log(response);
         while (form.firstChild) {
           form.removeChild(form.firstChild);
         }
@@ -48,10 +69,9 @@
           form.appendChild(aLink);
           aLink.appendChild(option);;
         });
-
-
-
       })
     }
-  };
+  }
+
+
 })();
